@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung - Swipeundweg</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --text-color: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent-red: #dc2626;
+            --accent-green: #22c55e;
+            --border-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+        }
+
+        .nav-logo span {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-color);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 120px 20px 60px;
+        }
+
+        /* Language Switch */
+        .lang-switch {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .lang-btn {
+            padding: 10px 25px;
+            border: 2px solid var(--border-color);
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--text-color);
+            color: var(--text-color);
+        }
+
+        .lang-btn.active {
+            background: var(--text-color);
+            color: var(--bg-color);
+            border-color: var(--text-color);
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin: 40px 0 20px 0;
+            color: var(--text-color);
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin: 25px 0 10px 0;
+            color: var(--text-secondary);
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+
+        ul {
+            margin: 15px 0 15px 25px;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: var(--text-color);
+        }
+
+        a {
+            color: var(--accent-green);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent-green);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo img {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+        }
+
+        .footer-logo span {
+            font-weight: 700;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 12px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .lang-btn {
+                padding: 8px 18px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="nav-logo">
+            <img src="logo.png" alt="Swipeundweg Logo">
+            <span>Swipeundweg</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="privacy.html" class="active">Datenschutz</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="showLang('de')">Deutsch</button>
+            <button class="lang-btn" onclick="showLang('en')">English</button>
+        </div>
+
+        <p class="last-updated">Zuletzt aktualisiert / Last Updated: 18. Dezember 2024</p>
+
+        <!-- GERMAN VERSION -->
+        <div id="de" class="content-section active">
+            <h1>Datenschutzerklärung</h1>
+
+            <h2>1. Einleitung</h2>
+            <p>Swipeundweg ("wir," "uns," "unser" oder "die App") verpflichtet sich zum Schutz Ihrer Privatsphäre. Diese Datenschutzerklärung erläutert, wie wir Informationen erfassen, verwenden und schützen, wenn Sie unsere Fotoverwaltungs-App nutzen.</p>
+
+            <h2>2. Verantwortliche Stelle</h2>
+            <p><strong>Verantwortlich für die Datenverarbeitung:</strong><br>
+            Philip Mauersberger<br>
+            Nerottstraße 6a<br>
+            68775 Ketsch, Deutschland<br>
+            E-Mail: <a href="mailto:gurillaztv@googlemail.com">gurillaztv@googlemail.com</a></p>
+
+            <h2>3. Welche Daten wir erheben</h2>
+
+            <h3>3.1 Zugriff auf die Fotobibliothek</h3>
+            <p>Swipeundweg benötigt Zugriff auf Ihre Fotobibliothek ausschließlich für:</p>
+            <ul>
+                <li>Anzeige Ihrer Fotos in der App</li>
+                <li>Erkennung potenzieller Duplikate</li>
+                <li>Löschen von Fotos, die Sie entfernen möchten</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Wichtig:</strong> Ihre Fotos werden ausschließlich auf Ihrem Gerät verarbeitet. Wir laden Ihre Fotos nicht hoch und übertragen sie nicht an externe Server.</p>
+            </div>
+
+            <h3>3.2 Lokale Datenspeicherung</h3>
+            <p>Die App speichert folgende Daten lokal auf Ihrem Gerät:</p>
+            <ul>
+                <li>App-Einstellungen und Präferenzen</li>
+                <li>Fortschrittsstatistiken (überprüfte/gelöschte Fotos)</li>
+                <li>Erfolge und Streak-Daten</li>
+                <li>Filtereinstellungen</li>
+                <li>Premium-Kaufstatus</li>
+            </ul>
+            <p>Diese Daten verbleiben auf Ihrem Gerät und werden nie an uns übertragen.</p>
+
+            <h3>3.3 Werbedaten (Google AdMob)</h3>
+            <p>Swipeundweg zeigt Werbung über Google AdMob an. Bei der Werbeeinblendung kann Google folgende Daten erheben:</p>
+            <ul>
+                <li>Geräte-Werbekennung (IDFA bei iOS)</li>
+                <li>IP-Adresse</li>
+                <li>Allgemeine Standortdaten (Land/Region)</li>
+                <li>Geräteinformationen (Modell, Betriebssystemversion)</li>
+                <li>App-Nutzungsdaten für Werberelevanz</li>
+            </ul>
+            <p>Diese Datenerhebung unterliegt der <a href="https://policies.google.com/privacy" target="_blank">Datenschutzrichtlinie von Google</a>.</p>
+            <p>Sie können personalisierte Werbung in Ihren Geräteeinstellungen deaktivieren:<br>
+            <strong>iOS:</strong> Einstellungen → Datenschutz & Sicherheit → Tracking → "Apps erlauben, Tracking anzufordern" deaktivieren</p>
+
+            <h3>3.4 In-App-Käufe</h3>
+            <p>Beim Kauf der Premium-Version (werbefrei) wird die Transaktion vollständig von Apple über den App Store abgewickelt. Wir erhalten und speichern keine Zahlungsinformationen. Es gilt <a href="https://www.apple.com/de/legal/privacy/" target="_blank">Apples Datenschutzrichtlinie</a>.</p>
+
+            <h2>4. Welche Daten wir NICHT erheben</h2>
+            <p>Swipeundweg erhebt <strong>KEINE:</strong></p>
+            <ul>
+                <li>Uploads Ihrer Fotos auf Server</li>
+                <li>Namen, E-Mail oder andere persönliche Identifikationsdaten</li>
+                <li>Präzise Standortdaten</li>
+                <li>Zugriff auf Kontakte, Kalender oder andere Apps</li>
+                <li>Analysedaten, die Ihr Verhalten verfolgen</li>
+                <li>Benutzerkonten oder Profile</li>
+                <li>Weitergabe Ihrer Daten an Dritte (außer anonymisierte Werbedaten durch Google)</li>
+            </ul>
+
+            <h2>5. Rechtsgrundlage der Verarbeitung (DSGVO)</h2>
+            <p>Für Nutzer im Europäischen Wirtschaftsraum (EWR) verarbeiten wir Daten auf Grundlage von:</p>
+            <ul>
+                <li><strong>Einwilligung (Art. 6 Abs. 1 lit. a DSGVO):</strong> Sie erteilen Ihre Einwilligung beim Gewähren des Fotobibliothek-Zugriffs</li>
+                <li><strong>Berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO):</strong> Anzeige von Werbung zur Finanzierung der kostenlosen App</li>
+                <li><strong>Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO):</strong> Abwicklung von Käufen über Apples App Store</li>
+            </ul>
+
+            <h2>6. Datenspeicherung</h2>
+            <ul>
+                <li><strong>Lokale App-Daten:</strong> Gespeichert bis Sie die App löschen oder App-Daten zurücksetzen</li>
+                <li><strong>Werbedaten:</strong> Von Google gemäß deren Aufbewahrungsrichtlinien verwaltet</li>
+                <li><strong>Gelöschte Fotos:</strong> Werden in "Zuletzt gelöscht" verschoben und nach 30 Tagen automatisch von iOS entfernt</li>
+            </ul>
+
+            <h2>7. Ihre Rechte (DSGVO)</h2>
+            <p>Sie haben folgende Rechte:</p>
+            <ul>
+                <li><strong>Auskunftsrecht (Art. 15 DSGVO):</strong> Einsicht in alle gespeicherten Daten (Einstellungen → App-Info)</li>
+                <li><strong>Recht auf Löschung (Art. 17 DSGVO):</strong> Löschen aller App-Daten durch Deinstallation</li>
+                <li><strong>Widerruf der Einwilligung (Art. 7 Abs. 3 DSGVO):</strong> Fotobibliothek-Zugriff in Geräteeinstellungen widerrufen</li>
+                <li><strong>Widerspruchsrecht (Art. 21 DSGVO):</strong> Personalisierte Werbung in Geräteeinstellungen deaktivieren</li>
+                <li><strong>Recht auf Datenübertragbarkeit (Art. 20 DSGVO):</strong> Kopie Ihrer Daten anfordern (per E-Mail)</li>
+                <li><strong>Beschwerderecht (Art. 77 DSGVO):</strong> Beschwerde bei einer Aufsichtsbehörde einreichen</li>
+            </ul>
+            <p>Da alle Daten lokal auf Ihrem Gerät gespeichert sind, haben Sie jederzeit die volle Kontrolle.</p>
+
+            <h2>8. Datenschutz für Kinder</h2>
+            <p>Swipeundweg ist ab 4+ Jahren freigegeben und erhebt wissentlich keine personenbezogenen Daten von Kindern unter 16 Jahren (DSGVO). Die App erhebt keine personenbezogenen Daten von Nutzern.</p>
+
+            <h2>9. Datensicherheit</h2>
+            <p>Wir setzen angemessene technische Maßnahmen zum Schutz Ihrer Daten um:</p>
+            <ul>
+                <li>Alle Daten werden lokal mit sicheren iOS-Speichermechanismen gespeichert</li>
+                <li>Keine Datenübertragung an externe Server</li>
+                <li>Keine Benutzerkonten, die kompromittiert werden könnten</li>
+            </ul>
+
+            <h2>10. Internationale Datenübertragungen</h2>
+            <p>Ihre Fotodaten verlassen nie Ihr Gerät. Von Google erhobene Werbedaten können gemäß Googles Richtlinien international übertragen werden.</p>
+
+            <h2>11. Änderungen dieser Datenschutzerklärung</h2>
+            <p>Wir können diese Datenschutzerklärung gelegentlich aktualisieren. Änderungen werden durch Aktualisierung des "Zuletzt aktualisiert"-Datums angezeigt. Die weitere Nutzung der App nach Änderungen gilt als Zustimmung zur überarbeiteten Richtlinie.</p>
+
+            <h2>12. Kontakt</h2>
+            <p>Bei Fragen oder Bedenken zu dieser Datenschutzerklärung:<br>
+            <strong>E-Mail:</strong> <a href="mailto:gurillaztv@googlemail.com">gurillaztv@googlemail.com</a></p>
+        </div>
+
+        <!-- ENGLISH VERSION -->
+        <div id="en" class="content-section">
+            <h1>Privacy Policy</h1>
+
+            <h2>1. Introduction</h2>
+            <p>Swipeundweg ("we," "us," "our," or "the App") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and protect information when you use our photo management application.</p>
+
+            <h2>2. Data Controller</h2>
+            <p><strong>Responsible Party:</strong><br>
+            Philip Mauersberger<br>
+            Nerottstraße 6a<br>
+            68775 Ketsch, Germany<br>
+            Email: <a href="mailto:gurillaztv@googlemail.com">gurillaztv@googlemail.com</a></p>
+
+            <h2>3. Information We Collect</h2>
+
+            <h3>3.1 Photo Library Access</h3>
+            <p>Swipeundweg requests access to your device's photo library solely to:</p>
+            <ul>
+                <li>Display your photos within the app</li>
+                <li>Identify potential duplicate photos</li>
+                <li>Delete photos you choose to remove</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Important:</strong> Your photos are processed exclusively on your device. We do not upload, transmit, or store your photos on any external servers.</p>
+            </div>
+
+            <h3>3.2 Local Data Storage</h3>
+            <p>The app stores the following data locally on your device:</p>
+            <ul>
+                <li>App preferences and settings</li>
+                <li>Progress statistics (photos reviewed, deleted)</li>
+                <li>Achievement and streak data</li>
+                <li>Filter preferences</li>
+                <li>Premium purchase status</li>
+            </ul>
+            <p>All this data remains on your device and is never transmitted to us.</p>
+
+            <h3>3.3 Advertising Data (Google AdMob)</h3>
+            <p>Swipeundweg displays advertisements through Google AdMob. When ads are shown, Google may collect:</p>
+            <ul>
+                <li>Device advertising identifier (IDFA on iOS)</li>
+                <li>IP address</li>
+                <li>General location data (country/region level)</li>
+                <li>Device information (model, OS version)</li>
+                <li>App usage information for ad relevance</li>
+            </ul>
+            <p>This data collection is governed by <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+            <p>You can opt out of personalized advertising in your device settings:<br>
+            <strong>iOS:</strong> Settings → Privacy & Security → Tracking → Disable "Allow Apps to Request to Track"</p>
+
+            <h3>3.4 In-App Purchases</h3>
+            <p>If you purchase the premium (ad-free) version, the transaction is processed entirely by Apple through the App Store. We do not receive or store your payment information. <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's privacy policy</a> applies.</p>
+
+            <h2>4. Information We Do NOT Collect</h2>
+            <p>Swipeundweg does <strong>NOT</strong>:</p>
+            <ul>
+                <li>Upload your photos to any server</li>
+                <li>Collect your name, email, or other personal identification</li>
+                <li>Track your precise location</li>
+                <li>Access your contacts, calendar, or other apps</li>
+                <li>Use analytics services that track your behavior</li>
+                <li>Create user accounts or profiles</li>
+                <li>Share your data with third parties (except anonymized ad data by Google)</li>
+            </ul>
+
+            <h2>5. Legal Basis for Processing (GDPR)</h2>
+            <p>For users in the European Economic Area (EEA), we process data based on:</p>
+            <ul>
+                <li><strong>Consent:</strong> You provide consent when granting photo library access</li>
+                <li><strong>Legitimate Interest:</strong> Displaying ads to provide a free app experience</li>
+                <li><strong>Contract:</strong> Processing purchases through Apple's App Store</li>
+            </ul>
+
+            <h2>6. Data Retention</h2>
+            <ul>
+                <li><strong>Local app data:</strong> Retained until you delete the app or clear app data</li>
+                <li><strong>Advertising data:</strong> Managed by Google according to their retention policies</li>
+                <li><strong>Deleted photos:</strong> Moved to "Recently Deleted" and permanently removed after 30 days by iOS</li>
+            </ul>
+
+            <h2>7. Your Rights (GDPR)</h2>
+            <p>You have the right to:</p>
+            <ul>
+                <li><strong>Access:</strong> View all data the app stores (Settings → App Info)</li>
+                <li><strong>Deletion:</strong> Delete all app data by uninstalling the app</li>
+                <li><strong>Withdraw Consent:</strong> Revoke photo library access in device settings</li>
+                <li><strong>Object to Processing:</strong> Opt out of personalized ads in device settings</li>
+                <li><strong>Data Portability:</strong> Request a copy of your data (contact us via email)</li>
+                <li><strong>Complaint:</strong> Lodge a complaint with a supervisory authority</li>
+            </ul>
+            <p>Since all data is stored locally on your device, you have complete control over it at all times.</p>
+
+            <h2>8. Children's Privacy</h2>
+            <p>Swipeundweg is rated 4+ and does not knowingly collect personal information from children under 16 (GDPR) or 13 (COPPA). The app does not collect any personal information from any user.</p>
+
+            <h2>9. Data Security</h2>
+            <p>We implement appropriate technical measures to protect your data:</p>
+            <ul>
+                <li>All data is stored locally using secure iOS storage mechanisms</li>
+                <li>No data transmission to external servers</li>
+                <li>No user accounts that could be compromised</li>
+            </ul>
+
+            <h2>10. International Data Transfers</h2>
+            <p>Your photo data never leaves your device. Advertising data collected by Google may be transferred internationally according to Google's data transfer policies.</p>
+
+            <h2>11. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy periodically. Changes will be indicated by updating the "Last Updated" date. Continued use of the app after changes constitutes acceptance of the revised policy.</p>
+
+            <h2>12. Contact Us</h2>
+            <p>For questions or concerns about this Privacy Policy:<br>
+            <strong>Email:</strong> <a href="mailto:gurillaztv@googlemail.com">gurillaztv@googlemail.com</a></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <img src="logo.png" alt="Swipeundweg">
+            <span>Swipeundweg</span>
+        </div>
+        <p>© 2024 Swipeundweg. <a href="index.html">Zurück zur Startseite</a></p>
+    </footer>
+
+    <script>
+        function showLang(lang) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(lang).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
