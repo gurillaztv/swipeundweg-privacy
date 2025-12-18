@@ -8,13 +8,12 @@
     <link rel="icon" type="image/png" href="logo.png">
     <style>
         :root {
-            --bg-color: #0a0a0a;
-            --card-bg: #1a1a1a;
+            --bg-color: #000000;
+            --card-bg: #0d0d0d;
             --text-color: #ffffff;
-            --text-secondary: #a0a0a0;
-            --accent-red: #dc2626;
-            --accent-green: #22c55e;
-            --border-color: #333;
+            --text-secondary: #888888;
+            --accent: #ffffff;
+            --border-color: #1a1a1a;
         }
 
         * {
@@ -101,8 +100,8 @@
             bottom: -4px;
             left: 0;
             width: 0;
-            height: 2px;
-            background: var(--accent-green);
+            height: 1px;
+            background: var(--text-color);
             transition: width 0.3s ease;
         }
 
@@ -133,9 +132,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(ellipse at 50% 0%, rgba(220, 38, 38, 0.15) 0%, transparent 60%),
-                        radial-gradient(ellipse at 80% 50%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
-                        radial-gradient(ellipse at 20% 80%, rgba(220, 38, 38, 0.08) 0%, transparent 50%);
+            background: radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 60%, rgba(255, 255, 255, 0.02) 0%, transparent 40%);
             transform: translateY(var(--parallax-y, 0));
             will-change: transform;
         }
@@ -150,8 +148,8 @@
             height: 140px;
             border-radius: 35px;
             margin-bottom: 35px;
-            box-shadow: 0 25px 80px rgba(220, 38, 38, 0.35),
-                        0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 25px 80px rgba(255, 255, 255, 0.1),
+                        0 10px 30px rgba(0,0,0,0.8);
             animation: float 6s ease-in-out infinite;
             transform: translateY(var(--logo-parallax, 0));
         }
@@ -242,7 +240,7 @@
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.25);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.15);
         }
 
         .btn-secondary {
@@ -336,7 +334,8 @@
             width: 72px;
             height: 72px;
             margin: 0 auto 28px;
-            background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-green) 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            border: 1px solid #222;
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -377,8 +376,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(ellipse at 20% 20%, rgba(34, 197, 94, 0.08) 0%, transparent 50%),
-                        radial-gradient(ellipse at 80% 80%, rgba(220, 38, 38, 0.08) 0%, transparent 50%);
+            background: radial-gradient(ellipse at 20% 30%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 70%, rgba(255, 255, 255, 0.015) 0%, transparent 50%);
             transform: translateY(var(--how-parallax, 0));
         }
 
@@ -434,15 +433,15 @@
         }
 
         .step-delete .step-number {
-            border-color: var(--accent-red);
-            color: var(--accent-red);
-            box-shadow: 0 0 30px rgba(220, 38, 38, 0.2);
+            border-color: #444;
+            color: #fff;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
         }
 
         .step-keep .step-number {
-            border-color: var(--accent-green);
-            color: var(--accent-green);
-            box-shadow: 0 0 30px rgba(34, 197, 94, 0.2);
+            border-color: #444;
+            color: #fff;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
         }
 
         .step-content h3 {
@@ -706,7 +705,7 @@
             <div class="footer-section">
                 <h4>Swipeundweg</h4>
                 <p style="color: var(--text-secondary); margin-bottom: 10px;">Wisch deine Fotos einfach weg.</p>
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">2024 Swipeundweg</p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">2025 Swipeundweg</p>
             </div>
             <div class="footer-section">
                 <h4>Links</h4>
